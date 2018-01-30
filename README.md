@@ -1,0 +1,5 @@
+### Running
+
+```bash
+./gradlew run
+```

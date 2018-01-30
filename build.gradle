@@ -2,6 +2,9 @@ group 'com.github.pchojnacki'
 version '0.0.1-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.github.pchojnacki.magnificent_checkr.Main"
 
 sourceCompatibility = 1.8
 
