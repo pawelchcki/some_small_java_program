@@ -8,13 +8,10 @@ import java.util.ArrayDeque;
 
 public class RollingAverage {
     private final ArrayDeque<Double> rollingAverage;
+    private Gauge magnificentLastMinuteStatus;
 
-
-    private static final Gauge magnificentLastMinuteStatus = Gauge.build()
-            .name("magnificent_last_minute_average_up").help("Magnificent status averaged in one minute").register();
-
-
-    public RollingAverage() {
+    public RollingAverage(Gauge magnificentLastMinuteStatus) {
+        this.magnificentLastMinuteStatus = magnificentLastMinuteStatus;
         rollingAverage = new ArrayDeque<>();
     }
 
