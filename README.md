@@ -24,3 +24,5 @@ magnificent_responses{response_code="500",} 19.0
 # TYPE magnificent_up gauge
 magnificent_up 1.0
 ```
+
+Note: `magnificent_last_minute_average_up` metric is added as a requirement of this task. Normally this would be handled by prometheus by scraping magnificent_up periodically.
