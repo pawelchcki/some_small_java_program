@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     private static final Gauge magnificentUp = Gauge.build()
             .name("magnificent_up").help("Magnificent status.").register();
-    
+
     private static final Counter magnificentResponses = Counter.build()
             .name("magnificent_responses").help("Magnificent response codes.")
             .labelNames("response_code")
@@ -31,6 +31,8 @@ public class Main {
         RxHttpClient rxClient = new DefaultRxHttpClient(client);
         Request request = client.prepareGet("http://localhost:12345").build();
         HTTPServer server = new HTTPServer(9414);
+
+        //TODO: most of this would normally be constructed using some sort of DI framework that would provide configuration and construct the needed objects
 
         Flowable<Long> reactor = Flowable.interval(1, TimeUnit.SECONDS);
 
